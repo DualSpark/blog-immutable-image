@@ -1,0 +1,29 @@
+{
+  "variables": {
+    "aws_access_key": "",
+    "aws_secret_key": ""
+  },
+  "builders": [
+    {
+      "type": "amazon-ebs",
+      "access_key": "",
+      "secret_key": "",
+      "region": "us-east-1",
+      "source_ami": "ami-b66ed3de",
+      "instance_type": "t2.micro",
+      "ssh_username": "ec2-user",
+      "ami_name": "packer-quick-start {{timestamp}}"
+    }
+  ],
+  "provisioners" :[
+    {
+      "type": "file",
+      "source": "./hello",
+      "destination": "/home/ec2-user/hello"
+    },
+    {
+      "type": "shell",
+      "inline": ["chmod +x /home/ec2-user/hello"]
+    }
+  ]
+}
