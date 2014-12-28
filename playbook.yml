@@ -1,0 +1,7 @@
+---
+  vars:
+    http_port: 8080
+  remote_user: root
+  tasks:
+  - name: set environment variables
+    shell: sed -i -e s/foo/bar// /etc/init.d/goapp

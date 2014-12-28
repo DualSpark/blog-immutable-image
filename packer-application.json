@@ -18,12 +18,22 @@
   "provisioners" :[
     {
       "type": "file",
-      "source": "./hello",
-      "destination": "/home/ec2-user/hello"
+      "source": "./main",
+      "destination": "/home/ec2-user/main"
     },
     {
       "type": "shell",
-      "inline": ["chmod +x /home/ec2-user/hello"]
+      "inline": ["chmod +x /home/ec2-user/main /home/ec2-user/goapp"]
+    },
+    {
+      "type": "file",
+      "source": "./goapp",
+      "destination": "/home/ec2-user/goapp"
+    },
+    {
+      "type": "shell",
+      "inline": ["sudo cp /home/ec2-user/goapp /etc/init.d/goapp"]
     }
+
   ]
 }
