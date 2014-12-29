@@ -2,10 +2,10 @@
 - hosts: all
   vars:
     http_port: 8080
-    max_clients: 200
   remote_user: root
   tasks:
-  - name: temp setup of goapp
-    shell: echo 'GOAPP_HTTP_PORT=""' > /home/ec2-user/goapp
   - name: set environment variables
-    lineinfile: dest=/home/ec2-user/goapp regexp="GOAPP_HTTP_PORT=\"\"" line="GOAPP_HTTP_PORT=\"8080\""
+    lineinfile:
+      dest=/home/ec2-user/goapp
+      regexp="GOAPP_HTTPPORT=\"\""
+      line="\tGOAPP_HTTPPORT=\"8080\""

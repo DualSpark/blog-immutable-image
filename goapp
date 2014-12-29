@@ -16,7 +16,7 @@ LOCK_FILE="/var/lock/subsys/goapp"
 
 do_start()
 {
-        export GOAPP_HTTP_PORT=""
+        export GOAPP_HTTPPORT=""
         if [ ! -f "$LOCK_FILE" ] ; then
                 echo -n $"Starting $SERVER: "
                 runuser -l "$USER" -c "$DAEMON $SERVER >> $LOG_FILE &" && echo_success || echo_failure
