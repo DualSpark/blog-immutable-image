@@ -6,6 +6,6 @@
   tasks:
   - name: set environment variables
     lineinfile:
-      dest=/home/ec2-user/goapp
+      dest=/home/ec2-user/settings.sh
       regexp="GOAPP_HTTPPORT=\"\""
-      line="\texport GOAPP_HTTPPORT=\"8080\""
+      line="export GOAPP_HTTPPORT=\"8080\""

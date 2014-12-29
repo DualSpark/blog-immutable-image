@@ -37,7 +37,7 @@ func setup() error {
 	}
 
 	if s.HttpPort == "" {
-		log.Print("No HttpPort url provided, defaulting to 9999")
+		log.Print("No HttpPort provided, defaulting to 9999")
 		s.HttpPort = "9999"
 	}
 	return nil

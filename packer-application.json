@@ -27,8 +27,17 @@
       "destination": "/home/ec2-user/goapp"
     },
     {
+      "type": "file",
+      "source": "./settings.sh",
+      "destination": "/home/ec2-user/settings.sh"
+    },
+    {
       "type": "shell",
       "inline": ["chmod +x /home/ec2-user/main /home/ec2-user/goapp"]
+    },
+    {
+      "type": "shell",
+      "inline": ["sudo cp /home/ec2-user/goapp /etc/init.d/goapp"]
     },
     {
       "type": "shell",
@@ -37,11 +46,6 @@
     {
       "type": "ansible-local",
       "playbook_file": "playbook.yml"
-    },
-    {
-      "type": "shell",
-      "inline": ["sudo cp /home/ec2-user/goapp /etc/init.d/goapp"]
     }
-
   ]
 }
