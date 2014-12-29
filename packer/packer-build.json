@@ -23,7 +23,7 @@
     },
     {
       "type": "file",
-      "source": "./webservice//goapp",
+      "source": "./webservice/goapp",
       "destination": "/home/ec2-user/goapp"
     },
     {
@@ -42,10 +42,6 @@
     {
       "type": "shell",
       "inline": ["sudo yum install -y --enablerepo=epel ansible"]
-    },
-    {
-      "type": "ansible-local",
-      "playbook_file": "./ansible/playbook.yml"
     }
   ]
 }

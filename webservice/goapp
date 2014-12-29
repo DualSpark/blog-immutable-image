@@ -1,9 +1,8 @@
 #!/bin/sh
-
-#
-# chkconfig: 75 99 99
+# chkconfig: 345 99 99
 # description: Go app
-#
+# Sample Go web service
+# processname: goapp
 
 . /etc/rc.d/init.d/functions
 
