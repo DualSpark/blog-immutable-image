@@ -18,13 +18,18 @@
   "provisioners" :[
     {
       "type": "file",
-      "source": "./main",
+      "source": "./webservice/main",
       "destination": "/home/ec2-user/main"
     },
     {
       "type": "file",
-      "source": "./goapp",
+      "source": "./webservice//goapp",
       "destination": "/home/ec2-user/goapp"
+    },
+    {
+      "type": "file",
+      "source": "./webservice//settings.sh",
+      "destination": "/home/ec2-user/settings.sh"
     },
     {
       "type": "shell",
@@ -32,16 +37,15 @@
     },
     {
       "type": "shell",
+      "inline": ["sudo cp /home/ec2-user/goapp /etc/init.d/goapp"]
+    },
+    {
+      "type": "shell",
       "inline": ["sudo yum install -y --enablerepo=epel ansible"]
     },
     {
       "type": "ansible-local",
-      "playbook_file": "playbook.yml"
-    },
-    {
-      "type": "shell",
-      "inline": ["sudo cp /home/ec2-user/goapp /etc/init.d/goapp"]
+      "playbook_file": "./ansible/playbook.yml"
     }
-
   ]
 }
