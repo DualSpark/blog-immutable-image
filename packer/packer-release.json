@@ -1,0 +1,33 @@
+{
+  "variables": {
+    "aws_access_key": "",
+    "aws_secret_key": "",
+    "source_ami": ""
+  },
+  "builders": [
+    {
+      "type": "amazon-ebs",
+      "access_key": "",
+      "secret_key": "",
+      "region": "us-east-1",
+      "source_ami": "{{user `source_ami`}}",
+      "instance_type": "t2.micro",
+      "ssh_username": "ec2-user",
+      "ami_name": "packer-quick-start {{timestamp}}"
+    }
+  ],
+  "provisioners" :[
+    {
+      "type": "ansible-local",
+      "playbook_file": "./ansible/playbook.yml"
+    },
+    {
+      "type": "shell",
+      "inline": ["sudo chkconfig --add goapp"]
+    },
+    {
+      "type": "shell",
+      "inline": ["sudo chkconfig goapp on"]
+    }
+  ]
+}
