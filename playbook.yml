@@ -8,4 +8,4 @@
     lineinfile:
       dest=/home/ec2-user/goapp
       regexp="GOAPP_HTTPPORT=\"\""
-      line="\tGOAPP_HTTPPORT=\"8080\""
+      line="\texport GOAPP_HTTPPORT=\"8080\""
