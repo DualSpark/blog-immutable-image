@@ -18,17 +18,17 @@
   "provisioners" :[
     {
       "type": "file",
-      "source": "./main",
+      "source": "../webservice/main",
       "destination": "/home/ec2-user/main"
     },
     {
       "type": "file",
-      "source": "./goapp",
+      "source": "../webservice//goapp",
       "destination": "/home/ec2-user/goapp"
     },
     {
       "type": "file",
-      "source": "./settings.sh",
+      "source": "../webservice//settings.sh",
       "destination": "/home/ec2-user/settings.sh"
     },
     {
@@ -45,7 +45,7 @@
     },
     {
       "type": "ansible-local",
-      "playbook_file": "playbook.yml"
+      "playbook_file": "../ansible/playbook.yml"
     }
   ]
 }

@@ -4,6 +4,7 @@
 packer build packer-application.json
 
 ## Add configuration values to the image with Ansible
-
+Done in previous step for now
 
 ## Deploy the image
+Launch the AMI packer made
