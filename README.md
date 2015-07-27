@@ -1,4 +1,4 @@
-# Making immutabile images on AWS with Packer and Ansible
+# Making immutable images on AWS with Packer and Ansible
 Following the [12 Factor App](http://12factor.net/) definitions, we'll put together an AMI that has the software installed on the image, then combine it with configuration for the destination environment for a release AMI.
 
 Think of "build" as installation and release as configuration.  See [build, release, run](http://12factor.net/build-release-run) on the 12 Factor App site.
